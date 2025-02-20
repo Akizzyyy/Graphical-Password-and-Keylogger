@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Password Login</title>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent form submission
+
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+
+      // Retrieve user data from localStorage
+      let storedUser = localStorage.getItem(username);
+      if (!storedUser) {
+        alert("User not found! Please register first.");
+        return;
+      }
+
+      let userData = JSON.parse(storedUser);
+      if (userData.password === password) {
+        alert("Login successful!");
+        window.location.href = "success.html"; // Redirect on success
+      } else {
+        alert("Incorrect password. Try again!");
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Basic Password Login</h1>
+
+<form onsubmit="handleLogin(event)">
+  <label>Username:</label>
+  <input type="text" id="username" required><br><br>
+
+  <label>Password:</label>
+  <input type="password" id="password" required><br><br>
+
+  <button type="submit">Login</button>
+</form>
+
+<button onclick="location.href='index.html'">Back</button>
+
+<p>No account? <a href="register.html">Register here</a></p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden { display: none; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .color-box {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            border: 2px solid #000;
+        }
+        .selected {
+            border: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+
+    <form id="registerForm">
+        <input type="text" id="registerUsername" placeholder="Username" required>
+
+        <h3>Select a Registration Method</h3>
+        <label>
+            <input type="radio" name="registerType" value="text" checked> Register with Password
+        </label>
+        <label>
+            <input type="radio" name="registerType" value="graphical"> Register with Graphical Password
+        </label>
+
+        <!-- Regular Password Section -->
+        <div id="passwordSection">
+            <input type="password" id="registerPassword" placeholder="Enter Password">
+        </div>
+
+        <!-- Graphical Password Section -->
+        <div id="graphicalPasswordSection" class="hidden">
+            <h3>Select a 4-Color Password</h3>
+            <div class="grid" id="colorGrid"></div>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="register-message" style="display: none;"></p>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

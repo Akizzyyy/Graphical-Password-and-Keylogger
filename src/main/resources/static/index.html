@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: block;
+            width: 250px;
+            padding: 10px;
+            margin: 10px auto;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .basic-register { background-color: #007BFF; color: white; }
+        .graphic-register { background-color: #28A745; color: white; }
+        .basic-login { background-color: #FFC107; color: white; }
+        .graphic-login { background-color: #DC3545; color: white; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome</h2>
+    <p>Select an option below:</p>
+
+    <button class="basic-register" onclick="location.href='register.html'">Register</button>
+    <button class="basic-login" onclick="location.href='login.html'">Login with Basic Password</button>
+    <button class="graphic-login" onclick="location.href='graphiclogin.html'">Login with Graphical Password</button>
+</div>
+</body>
+</html>

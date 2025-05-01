@@ -1,4 +1,4 @@
-/* === Page Layout === */
+
 .auth-container {
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@
     width: 100%;
 }
 
-/* === Input Field === */
+
 .auth-input {
     width: 250px;
     padding: 10px;
@@ -30,7 +30,7 @@
     font-size: 16px;
 }
 
-/* === Wheel Container (for concentric stacking) === */
+
 .wheel-container {
     position: relative;
     width: 400px;
@@ -38,7 +38,7 @@
     margin-bottom: 30px;
 }
 
-/* === Each Wheel Positioned at Center === */
+
 .wheel {
     position: absolute;
     top: 50%;
@@ -48,10 +48,10 @@
 }
 
 .wheel svg {
-    pointer-events: auto; /* allow clicking the slices */
+    pointer-events: auto;
 }
 
-/* === Arrow Indicator Bottom Right === */
+
 .arrow-indicator {
     position: absolute;
     font-size: 24px;
@@ -65,7 +65,7 @@
     transform: rotate(-135deg);
 }
 
-/* === Login/Register Button === */
+
 .register-btn,
 .auth-btn {
     padding: 12px 24px;
@@ -84,7 +84,7 @@
     background-color: #218838;
 }
 
-/* === Toggle Mode Button === */
+
 .toggle-btn {
     margin-top: 15px;
     font-size: 14px;
@@ -99,7 +99,7 @@
     color: #0056b3;
 }
 
-/* === Selected Colors Display === */
+
 .selected-colors {
     display: flex;
     justify-content: center;
@@ -115,7 +115,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* === Modal Backdrop === */
+
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -129,7 +129,7 @@
     z-index: 1000;
 }
 
-/* === Modal Window === */
+
 .modal {
     background: white;
     padding: 25px 30px;
@@ -139,14 +139,14 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* === Modal Buttons Layout === */
+
 .modal-buttons {
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
 }
 
-/* === Individual Modal Buttons === */
+
 .confirm-btn,
 .cancel-btn {
     padding: 8px 16px;

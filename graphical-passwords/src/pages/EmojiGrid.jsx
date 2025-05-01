@@ -17,6 +17,8 @@ export default function EmojiGrid() {
     const [mode, setMode] = useState("register");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const [showModal, setShowModal] = useState(false);
+
     const navigate = useNavigate();
     const location = useLocation();
     const gridSize = 5;
@@ -54,7 +56,6 @@ export default function EmojiGrid() {
             setSelected([{ emoji, row, col }]);
             return;
         }
-
 
         if (selected.find(s => s.emoji === emoji)) {
             setError("You already selected this emoji.");
@@ -113,11 +114,6 @@ export default function EmojiGrid() {
             })
         };
 
-
-        if (mode === "login") {
-            payload.grid = grid.flat();
-        }
-
         try {
             const response = await fetch(`http://localhost:5000/${mode === "register" ? "register" : "auth"}`, {
                 method: "POST",
@@ -136,7 +132,7 @@ export default function EmojiGrid() {
                         navigate("/emoji-auth?mode=login");
                     }, 1500);
                 } else {
-                    setTimeout(() => navigate("/"), 1500);
+                    setShowModal(true); // Show modal instead of navigating
                 }
             } else {
                 setError(data.message || "Something went wrong.");
@@ -152,6 +148,12 @@ export default function EmojiGrid() {
     return (
         <div className="emoji-grid-wrapper">
             <h2>{mode === "register" ? "Register with Emoji Grid" : "Login with Emoji Grid"}</h2>
+
+            <p className="instruction-text">
+                {mode === "register"
+                    ? "Select 2 emojis on separate rows and columns."
+                    : "Select the intersection of both emojis."}
+            </p>
 
             <input
                 className="auth-input"
@@ -191,7 +193,6 @@ export default function EmojiGrid() {
                 {mode === "register" ? "Already registered? Log in" : "New user? Register here"}
             </button>
 
-
             <button
                 className="toggle-btn"
                 onClick={() => navigate("/")}
@@ -202,6 +203,18 @@ export default function EmojiGrid() {
 
             {error && <p className="error-text">{error}</p>}
             {message && <p className="success-text">{message}</p>}
+
+            {showModal && (
+                <div className="modal-backdrop">
+                    <div className="modal">
+                        <p>Login successful. Return to homepage?</p>
+                        <div className="modal-buttons">
+                            <button onClick={() => navigate("/")}>Yes</button>
+                            <button onClick={() => setShowModal(false)}>Stay</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

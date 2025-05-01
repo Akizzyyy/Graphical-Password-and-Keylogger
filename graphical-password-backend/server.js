@@ -96,14 +96,21 @@ app.post("/auth", async (req, res) => {
                 submittedGrid.slice(i * 5, i * 5 + 5)
             );
 
-            let rowA = null, colB = null;
+            let rowA = null, colA = null, rowB = null, colB = null;
 
             for (let r = 0; r < 5; r++) {
                 for (let c = 0; c < 5; c++) {
-                    if (grid[r][c] === emojiA) rowA = r;
-                    if (grid[r][c] === emojiB) colB = c;
+                    if (grid[r][c] === emojiA) {
+                        rowA = r;
+                        colA = c;
+                    }
+                    if (grid[r][c] === emojiB) {
+                        rowB = r;
+                        colB = c;
+                    }
                 }
             }
+
 
             console.log("🔍 Login attempt for:", username);
             console.table(grid);
@@ -115,7 +122,8 @@ app.post("/auth", async (req, res) => {
                 return res.status(401).json({ message: "Registered emojis not found in grid." });
             }
 
-            const expected = grid[rowA][colB];
+            const expected1 = grid[rowA][colB];
+            const expected2 = grid[rowB][colA];
             // === EXPORT OBSERVATION FOR SHOULDER SURFER AI ===
             const fs = require("fs");
             const aiLog = {
@@ -135,11 +143,12 @@ app.post("/auth", async (req, res) => {
             );
 
 
-            if (clickedEmoji === expected) {
+            if (clickedEmoji === expected1 || clickedEmoji === expected2) {
                 return res.json({ message: "Login successful" });
             } else {
                 return res.status(401).json({ message: "Incorrect emoji grid password" });
             }
+
         }
 
         res.status(400).json({ message: "Unknown authentication method" });

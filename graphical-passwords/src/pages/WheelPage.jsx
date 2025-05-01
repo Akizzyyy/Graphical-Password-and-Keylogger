@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ColorWheel from "../components/ColorWheel.jsx";
 import "./WheelPage.css";
 
-// Helper function to shuffle arrays
+
 function shuffle(array) {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {

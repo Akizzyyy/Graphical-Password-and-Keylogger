@@ -9,7 +9,7 @@
     position: relative;
     border-radius: 50%;
     overflow: hidden;
-    transition: transform 2s ease-out; /* Smooth spin animation */
+    transition: transform 2s ease-out;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,124 @@
+/* Wrapper to center everything */
+.emoji-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ✅ vertical centering */
+    padding: 40px;
+    min-height: 100vh;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* Input styling */
+.auth-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Emoji grid layout */
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* Each emoji cell */
+.emoji-cell {
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emoji-cell:hover {
+    transform: scale(1.05);
+    border-color: #888;
+}
+
+.selected {
+    background: #d4edda;
+    border-color: #28a745;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.auth-btn,
+.refresh-btn,
+.toggle-btn {
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/* Auth Button */
+.auth-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.auth-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Refresh Grid Button */
+.refresh-btn {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+}
+
+.refresh-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Toggle between login/register */
+.toggle-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.toggle-btn:hover {
+    color: #0056b3;
+}
+
+/* Feedback messages */
+.success-text {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.error-text {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.emoji-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       /* ✅ vertical center */
+    height: 100vh;                 /* ✅ full page height */
+    width: 100vw;                  /* ✅ full page width */
+    background: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,42 @@
+.wheel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 2s ease-out; /* Smooth spin animation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    transform-origin: 50% 100%;
+}
+.wheel {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+    transform-origin: 50% 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}

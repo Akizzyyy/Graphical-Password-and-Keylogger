@@ -1,9 +1,26 @@
-# Your project name here
+How to Run the Project
+This project includes:
 
-## Information about this repository
+Graphical Password Backend (Node.js + MongoDB)
 
-This is the repository that you are going to use **individually** for developing your project. Please use the resources provided in the module to learn about **plagiarism** and how plagiarism awareness can foster your learning.
+Shoulder Surfer AI (Python script for monitoring and training)
 
-Regarding the use of this repository, once a feature (or part of it) is developed and **working** or parts of your system are integrated and **working**, define a commit and push it to the remote repository. You may find yourself making a commit after a productive hour of work (or even after 20 minutes!), for example. Choose commit message wisely and be concise.
+Steps to Run
 
-Please choose the structure of the contents of this repository that suits the needs of your project but do indicate in this file where the main software artefacts are located.
+1. Start the Frontend
+Open a terminal and navigate to the graphical-passwords directory:
+cd graphical-passwords
+npm install
+npm run dev
+This starts the React app (usually at http://localhost:5173).
+
+
+2. Start the Backend
+Open a terminal and navigate to the graphical-password-backend directory:
+cd graphical-password-backend
+nodemon server.js
+This starts the Express server that handles registration and authentication.
+
+3. Run the Shoulder Surfer AI
+Open another terminal and run the Python script:
+python shoulder_surfer.py
